@@ -21,10 +21,12 @@ class ViewController: UIViewController {
 
     var timestamp: Double!
     
+    let ChosenKey = "some key"
+    let ChosenAccount = "myUserAccount"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         oldDomainState = context.evaluatedPolicyDomainState
-        sendJSONMessage()
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,9 +34,19 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func saveIntoKeychain() throws {
-        try Locksmith.saveData(["some key": "some value"], forUserAccount: "myUserAccount")
-        throw LocksmithError.Undefined
+    @IBAction func saveIntoKeychain() {
+        createStringAndSaveIntoKeychain()
+    }
+    
+    func createStringAndSaveIntoKeychain() {
+        guard let dictionary = Locksmith.loadDataForUserAccount(ChosenAccount), let _ = dictionary[ChosenKey] else {
+            do {
+                try Locksmith.saveData([ChosenKey: "some value"], forUserAccount: ChosenAccount)
+            } catch {
+                LocksmithError.Undefined
+            }
+            return
+        }
     }
     
     @IBAction func checkIfFingerprintWasAdded() {
@@ -47,7 +59,7 @@ class ViewController: UIViewController {
     
     @IBAction func sendJSONMessage() {
         
-        guard let dictionary = Locksmith.loadDataForUserAccount("myUserAccount"), let value = dictionary["some key"] else { return }
+        guard let dictionary = Locksmith.loadDataForUserAccount(ChosenAccount), let value = dictionary[ChosenKey], let timestamp = timestamp else { return }
         
         let jsonDict = ["randomstring": value , "newfinger": timestamp]
         
