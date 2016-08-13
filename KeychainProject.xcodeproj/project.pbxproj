@@ -13,6 +13,8 @@
 		D49795101D5F4FCD00E09D5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D497950F1D5F4FCD00E09D5D /* Assets.xcassets */; };
 		D49795131D5F4FCD00E09D5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D49795111D5F4FCD00E09D5D /* LaunchScreen.storyboard */; };
 		D497951E1D5F4FCD00E09D5D /* KeychainProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D497951D1D5F4FCD00E09D5D /* KeychainProjectTests.swift */; };
+		D49795291D5F510600E09D5D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D49795281D5F510600E09D5D /* Podfile */; };
+		E2E4B776358C9971B1DDF947 /* Pods_KeychainProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30FBFDCF7ACBBBDC30709B86 /* Pods_KeychainProject.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +28,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		30FBFDCF7ACBBBDC30709B86 /* Pods_KeychainProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KeychainProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		486D616AA19A2A1F119A210B /* Pods-KeychainProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeychainProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-KeychainProject/Pods-KeychainProject.release.xcconfig"; sourceTree = "<group>"; };
+		554238438A3C01E29F9C7817 /* Pods-KeychainProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeychainProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KeychainProject/Pods-KeychainProject.debug.xcconfig"; sourceTree = "<group>"; };
 		D49795051D5F4FCD00E09D5D /* KeychainProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeychainProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D49795081D5F4FCD00E09D5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D497950A1D5F4FCD00E09D5D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +41,7 @@
 		D49795191D5F4FCD00E09D5D /* KeychainProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeychainProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D497951D1D5F4FCD00E09D5D /* KeychainProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainProjectTests.swift; sourceTree = "<group>"; };
 		D497951F1D5F4FCD00E09D5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D49795281D5F510600E09D5D /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2E4B776358C9971B1DDF947 /* Pods_KeychainProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +63,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FE463973638898624B03B75 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				30FBFDCF7ACBBBDC30709B86 /* Pods_KeychainProject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9640F5AB2BE2FEFD3B73A25C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				554238438A3C01E29F9C7817 /* Pods-KeychainProject.debug.xcconfig */,
+				486D616AA19A2A1F119A210B /* Pods-KeychainProject.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D49794FC1D5F4FCD00E09D5D = {
 			isa = PBXGroup;
 			children = (
+				D49795281D5F510600E09D5D /* Podfile */,
 				D49795071D5F4FCD00E09D5D /* KeychainProject */,
 				D497951C1D5F4FCD00E09D5D /* KeychainProjectTests */,
 				D49795061D5F4FCD00E09D5D /* Products */,
+				9640F5AB2BE2FEFD3B73A25C /* Pods */,
+				0FE463973638898624B03B75 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,9 +130,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D49795221D5F4FCD00E09D5D /* Build configuration list for PBXNativeTarget "KeychainProject" */;
 			buildPhases = (
+				FE8F1C629EA7AA34D719DF5E /* [CP] Check Pods Manifest.lock */,
 				D49795011D5F4FCD00E09D5D /* Sources */,
 				D49795021D5F4FCD00E09D5D /* Frameworks */,
 				D49795031D5F4FCD00E09D5D /* Resources */,
+				BDDB83CB50C7413B68C207E9 /* [CP] Embed Pods Frameworks */,
+				9F41B6BC169854E14D7AFB95 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -179,6 +209,7 @@
 			files = (
 				D49795131D5F4FCD00E09D5D /* LaunchScreen.storyboard in Resources */,
 				D49795101D5F4FCD00E09D5D /* Assets.xcassets in Resources */,
+				D49795291D5F510600E09D5D /* Podfile in Resources */,
 				D497950E1D5F4FCD00E09D5D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,6 +222,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9F41B6BC169854E14D7AFB95 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KeychainProject/Pods-KeychainProject-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BDDB83CB50C7413B68C207E9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KeychainProject/Pods-KeychainProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE8F1C629EA7AA34D719DF5E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D49795011D5F4FCD00E09D5D /* Sources */ = {
@@ -325,6 +404,7 @@
 		};
 		D49795231D5F4FCD00E09D5D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 554238438A3C01E29F9C7817 /* Pods-KeychainProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = KeychainProject/Info.plist;
@@ -336,6 +416,7 @@
 		};
 		D49795241D5F4FCD00E09D5D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 486D616AA19A2A1F119A210B /* Pods-KeychainProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = KeychainProject/Info.plist;
@@ -388,6 +469,7 @@
 				D49795241D5F4FCD00E09D5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D49795251D5F4FCD00E09D5D /* Build configuration list for PBXNativeTarget "KeychainProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -396,6 +478,7 @@
 				D49795271D5F4FCD00E09D5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
