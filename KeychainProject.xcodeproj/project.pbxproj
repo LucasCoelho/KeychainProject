@@ -13,6 +13,9 @@
 		D49795101D5F4FCD00E09D5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D497950F1D5F4FCD00E09D5D /* Assets.xcassets */; };
 		D49795131D5F4FCD00E09D5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D49795111D5F4FCD00E09D5D /* LaunchScreen.storyboard */; };
 		D497951E1D5F4FCD00E09D5D /* KeychainProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D497951D1D5F4FCD00E09D5D /* KeychainProjectTests.swift */; };
+		D497952C1D5F5F0100E09D5D /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D497952B1D5F5F0100E09D5D /* HttpMethod.swift */; };
+		D497952E1D5F5F2A00E09D5D /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D497952D1D5F5F2A00E09D5D /* Resource.swift */; };
+		D49795301D5F5F5F00E09D5D /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D497952F1D5F5F5F00E09D5D /* Webservice.swift */; };
 		E2E4B776358C9971B1DDF947 /* Pods_KeychainProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30FBFDCF7ACBBBDC30709B86 /* Pods_KeychainProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +43,9 @@
 		D49795191D5F4FCD00E09D5D /* KeychainProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeychainProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D497951D1D5F4FCD00E09D5D /* KeychainProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainProjectTests.swift; sourceTree = "<group>"; };
 		D497951F1D5F4FCD00E09D5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D497952B1D5F5F0100E09D5D /* HttpMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
+		D497952D1D5F5F2A00E09D5D /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		D497952F1D5F5F5F00E09D5D /* Webservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,7 @@
 		D49795071D5F4FCD00E09D5D /* KeychainProject */ = {
 			isa = PBXGroup;
 			children = (
+				D497952A1D5F5EE500E09D5D /* Networking */,
 				D49795081D5F4FCD00E09D5D /* AppDelegate.swift */,
 				D497950A1D5F4FCD00E09D5D /* ViewController.swift */,
 				D497950C1D5F4FCD00E09D5D /* Main.storyboard */,
@@ -118,6 +125,16 @@
 				D497951F1D5F4FCD00E09D5D /* Info.plist */,
 			);
 			path = KeychainProjectTests;
+			sourceTree = "<group>";
+		};
+		D497952A1D5F5EE500E09D5D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D497952B1D5F5F0100E09D5D /* HttpMethod.swift */,
+				D497952D1D5F5F2A00E09D5D /* Resource.swift */,
+				D497952F1D5F5F5F00E09D5D /* Webservice.swift */,
+			);
+			name = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +290,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D497950B1D5F4FCD00E09D5D /* ViewController.swift in Sources */,
+				D497952E1D5F5F2A00E09D5D /* Resource.swift in Sources */,
+				D497952C1D5F5F0100E09D5D /* HttpMethod.swift in Sources */,
+				D49795301D5F5F5F00E09D5D /* Webservice.swift in Sources */,
 				D49795091D5F4FCD00E09D5D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

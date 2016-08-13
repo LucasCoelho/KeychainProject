@@ -10,6 +10,9 @@ import UIKit
 import Locksmith
 import LocalAuthentication
 
+
+typealias JSONDictionary = [String: AnyObject]
+
 class ViewController: UIViewController {
 
     var oldDomainState: NSData?
@@ -21,8 +24,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         oldDomainState = context.evaluatedPolicyDomainState
-
-        // Do any additional setup after loading the view, typically from a nib.
+        sendJSONMessage()
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,6 +42,22 @@ class ViewController: UIViewController {
         
         if let domainState = context.evaluatedPolicyDomainState where domainState != oldDomainState {
             timestamp = NSDate().timeIntervalSince1970
+        }
+    }
+    
+    func sendJSONMessage() {
+        
+        guard let dictionary = Locksmith.loadDataForUserAccount("myUserAccount"), let value = dictionary["some key"] else { return }
+        
+        let jsonDict = ["randomstring": value , "newfinger": timestamp]
+        
+        let url = NSURL(string: "https://requestb.in/wo6pi2wo")!
+        
+        let resource = Resource(url: url, method: .post(jsonDict), parseJSON: { result in
+            print("parse result:\(result)")
+        })
+        Webservice().load(resource) { (result) in
+            print(result)
         }
     }
 }
