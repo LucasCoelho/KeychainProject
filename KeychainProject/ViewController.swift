@@ -32,12 +32,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func saveIntoKeychain() throws {
+    @IBAction func saveIntoKeychain() throws {
         try Locksmith.saveData(["some key": "some value"], forUserAccount: "myUserAccount")
         throw LocksmithError.Undefined
     }
     
-    func checkIfFingerprintWasAdded() {
+    @IBAction func checkIfFingerprintWasAdded() {
         context.canEvaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, error: nil)
         
         if let domainState = context.evaluatedPolicyDomainState where domainState != oldDomainState {
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func sendJSONMessage() {
+    @IBAction func sendJSONMessage() {
         
         guard let dictionary = Locksmith.loadDataForUserAccount("myUserAccount"), let value = dictionary["some key"] else { return }
         

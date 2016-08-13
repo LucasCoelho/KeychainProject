@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="KeychainProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,7 +16,38 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B6L-gp-0xu">
+                                <rect key="frame" x="169" y="40" width="263" height="30"/>
+                                <state key="normal" title="1. Create string and save into keychain"/>
+                                <connections>
+                                    <action selector="saveIntoKeychain" destination="BYZ-38-t0r" eventType="touchUpInside" id="z7Z-Er-uhV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ly-nc-3pf">
+                                <rect key="frame" x="138" y="90" width="324" height="30"/>
+                                <state key="normal" title="2. Detect if a fingerprint was added or removed"/>
+                                <connections>
+                                    <action selector="checkIfFingerprintWasAdded" destination="BYZ-38-t0r" eventType="touchUpInside" id="MZm-0q-eLC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KPY-qK-b8f">
+                                <rect key="frame" x="227" y="140" width="147" height="30"/>
+                                <state key="normal" title="3. Send info to server"/>
+                                <connections>
+                                    <action selector="sendJSONMessage" destination="BYZ-38-t0r" eventType="touchUpInside" id="YB6-HK-gLj"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="B6L-gp-0xu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7ch-Qh-K2e"/>
+                            <constraint firstItem="KPY-qK-b8f" firstAttribute="top" secondItem="1Ly-nc-3pf" secondAttribute="bottom" constant="20" id="WdY-df-pzf"/>
+                            <constraint firstItem="B6L-gp-0xu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="dwj-Ns-X1n"/>
+                            <constraint firstItem="1Ly-nc-3pf" firstAttribute="top" secondItem="B6L-gp-0xu" secondAttribute="bottom" constant="20" id="grQ-bN-J2n"/>
+                            <constraint firstItem="KPY-qK-b8f" firstAttribute="centerX" secondItem="1Ly-nc-3pf" secondAttribute="centerX" id="uwh-oj-1Wh"/>
+                            <constraint firstItem="B6L-gp-0xu" firstAttribute="centerX" secondItem="1Ly-nc-3pf" secondAttribute="centerX" id="xPw-Fu-pVq"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
