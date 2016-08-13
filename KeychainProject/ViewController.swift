@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Locksmith
 
 class ViewController: UIViewController {
 
@@ -18,6 +19,11 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func saveIntoKeychain() throws {
+        try Locksmith.saveData(["some key": "some value"], forUserAccount: "myUserAccount")
+        throw LocksmithError.Undefined
     }
 }
 
